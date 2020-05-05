@@ -1,0 +1,19 @@
+{
+  "name": "15-burger-2-the-sequel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SandeshCharka/Burger-2-The-Sequel.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SandeshCharka/Burger-2-The-Sequel/issues"
+  },
+  "homepage": "https://github.com/SandeshCharka/Burger-2-The-Sequel#readme"
+}
