@@ -21,11 +21,16 @@ app.engine("handlebars", exphbs({
 }));
 app.set("view engine", "handlebars");
 
-// Importing routes from controllers folder
-var routes = require("./controllers/burgers_controller.js");
-app.use(routes);
+// Routes
+// ===================================
+require("./routes/api-routes.js")(app);
+
+// Requiring our models for syncing
+var db = require("./models");
 
 
-app.listen(PORT, function () {
-    console.log("App listening on PORT " + PORT);
+db.sequelize.sync().then(function () {
+    app.listen(PORT, function () {
+        console.log("App listening on PORT " + PORT);
+    });
 });

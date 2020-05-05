@@ -32,11 +32,11 @@
                         <h3>Burgers:</h3>
                     </div>
                     {{#each burgers}}
-                    {{#unless devoured}}
+                    {{#unless this.dataValues.devoured}}
                     <li style="list-style-type:none">
                         <div id="updateBurger" class="text-white bg-info text-center">
-                            <p>{{this.id}}) {{burger_name}}
-                                <button id={{this.id}} class="eatMe btn btn-lg btn-outline-warning text-white">Eat Me!</button>
+                            <p>{{this.dataValues.id}}) {{this.dataValues.burger_name}}
+                                <button id={{this.dataValues.id}} class="eatMe btn btn-lg btn-outline-warning text-white">Eat Me!</button>
                             </p>
                         </div>
                     </li>
@@ -50,10 +50,10 @@
                         <h3>Eaten Burgers:</h3>
                     </div>
                     {{#each burgers}}
-                    {{#if devoured}}
+                    {{#if this.dataValues.devoured}}
                     <li style="list-style-type:none">
                         <div class="bg-danger text-center">
-                            <p>{{this.id}}) {{burger_name}}</p>
+                            <p>{{this.dataValues.id}}) {{this.dataValues.burger_name}}</p>
                         </div>
                     </li>
                     {{/if}}

@@ -12,7 +12,7 @@ $(function () {
             type: "POST",
             data: newBurger,
         }).then(function () {
-            // console.log("newBurgerAdded");
+            
             location.reload();
         })
     });
