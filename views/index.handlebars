@@ -1,0 +1,71 @@
+<div class="container">
+    <div class="jumbotron title">
+        <h1 class="display-4 text-center">Eat-Da-Burger!</h1>
+        <div class="text-center">
+            <img src="/assets/img/BurgerPngT.png" height="9%" width="9%">
+        </div>
+    </div>
+    <div class="jumbotron">
+        <div class="row">
+
+            <div class="card-deck">
+                <div class="col-sm card text-white bg-primary" style="width: 35rem;">
+                    <div class="card-header">
+                        <h3>Add a Burger:</h3>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <form id="addBurger">
+                            <li class="list-group-item text-white bg-primary">
+                                <textarea name="addBurgerInput" cols="35" rows="4"
+                                    oninvalid="this.setCustomValidity('Enter a Burger!')"
+                                    oninput="this.setCustomValidity('')" required></textarea>
+                            </li>
+                            <li class="list-group-item text-white bg-primary">
+                                <button type="submit" class="btn btn-success btn-lg text-white">Add Burger!</button>
+                            </li>
+                        </form>
+                    </ul>
+                </div>
+
+                <div class="col-sm card text-white bg-success" style="width: 35rem;">
+                    <div class="card-header">
+                        <h3>Burgers:</h3>
+                    </div>
+                    {{#each burgers}}
+                    {{#unless devoured}}
+                    <li style="list-style-type:none">
+                        <div id="updateBurger" class="text-white bg-info text-center">
+                            <p>{{this.id}}) {{burger_name}}
+                                <button id={{this.id}} class="eatMe btn btn-lg btn-outline-warning text-white">Eat Me!</button>
+                            </p>
+                        </div>
+                    </li>
+                    {{/unless}}
+                    {{/each}}
+
+                </div>
+
+                <div class="col-sm card text-white bg-dark" style="width: 35rem;">
+                    <div class="card-header">
+                        <h3>Eaten Burgers:</h3>
+                    </div>
+                    {{#each burgers}}
+                    {{#if devoured}}
+                    <li style="list-style-type:none">
+                        <div class="bg-danger text-center">
+                            <p>{{this.id}}) {{burger_name}}</p>
+                        </div>
+                    </li>
+                    {{/if}}
+                    {{/each}}
+                </div>
+
+            </div>
+
+        </div>
+        <button id="clear" type="button" class="btn btn-danger btn-lg btn-block mt-5">Clear all Burgers!</button>
+
+    </div>
+</div>
+</div>
+</div>

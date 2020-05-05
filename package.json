@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/SandeshCharka/Burger-2-The-Sequel/issues"
   },
-  "homepage": "https://github.com/SandeshCharka/Burger-2-The-Sequel#readme"
+  "homepage": "https://github.com/SandeshCharka/Burger-2-The-Sequel#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
+    "mysql": "^2.18.1",
+    "sequelize": "^5.21.7"
+  }
 }

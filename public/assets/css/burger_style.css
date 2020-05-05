@@ -1,0 +1,15 @@
+body {
+    background-image: url("../img/Background.jpg");
+    background-blend-mode: multiply;
+}
+
+.jumbotron {
+    background: none;
+    opacity: 90%;
+}
+
+.jumbotron.title {
+    background-image: url("../img/RealisticBurger.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
