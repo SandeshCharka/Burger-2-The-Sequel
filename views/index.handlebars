@@ -1,6 +1,6 @@
 <div class="container">
     <div class="jumbotron title">
-        <h1 class="display-4 text-center">Eat-Da-Burger!</h1>
+        <h1 class="display-4 text-center">Burger 2: The Sequel</h1>
         <div class="text-center">
             <img src="/assets/img/BurgerPngT.png" height="9%" width="9%">
         </div>
@@ -16,9 +16,9 @@
                     <ul class="list-group list-group-flush">
                         <form id="addBurger">
                             <li class="list-group-item text-white bg-primary">
-                                <textarea name="addBurgerInput" cols="35" rows="4"
+                                <input name="addBurgerInput" placeholder="What type of burger?" class="form-control" type="text"
                                     oninvalid="this.setCustomValidity('Enter a Burger!')"
-                                    oninput="this.setCustomValidity('')" required></textarea>
+                                    oninput="this.setCustomValidity('')" required>
                             </li>
                             <li class="list-group-item text-white bg-primary">
                                 <button type="submit" class="btn btn-success btn-lg text-white">Add Burger!</button>
@@ -26,6 +26,7 @@
                         </form>
                     </ul>
                 </div>
+
 
                 <div class="col-sm card text-white bg-success" style="width: 35rem;">
                     <div class="card-header">
@@ -36,7 +37,8 @@
                     <li style="list-style-type:none">
                         <div id="updateBurger" class="text-white bg-info text-center">
                             <p>{{this.dataValues.id}}) {{this.dataValues.burger_name}}
-                                <button id={{this.dataValues.id}} class="eatMe btn btn-lg btn-outline-warning text-white">Eat Me!</button>
+                                <button id={{this.dataValues.id}}
+                                    class="eatMe btn btn-lg btn-outline-warning text-white">Eat Me!</button>
                             </p>
                         </div>
                     </li>

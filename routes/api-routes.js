@@ -5,7 +5,11 @@ module.exports = function (app) {
     app.get("/", function (req, res) {
 
 
-        db.burger.findAll().then(function (data) {
+        db.burger.findAll({
+            order: [
+                ['burger_name', 'ASC'],
+            ]
+        }).then(function (data) {
 
             // console.log(data[0].dataValues.burger_name);
             // console.log(JSON.stringify(data));
@@ -28,6 +32,7 @@ module.exports = function (app) {
         db.burger.create({
             burger_name: newBurger,
         }).then(function (result) {
+            
             res.json({
                 id: result.dataValues.id
             })
@@ -62,7 +67,7 @@ module.exports = function (app) {
             // This method will reset the Id values
             // truncate: true,
             where: {
-            
+
             },
         }).then(function (result) {
 
