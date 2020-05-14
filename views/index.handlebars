@@ -15,13 +15,23 @@
                     </div>
                     <ul class="list-group list-group-flush">
                         <form id="addBurger">
-                            <li class="list-group-item text-white bg-primary">
-                                <input name="addBurgerInput" placeholder="What type of burger?" class="form-control" type="text"
-                                    oninvalid="this.setCustomValidity('Enter a Burger!')"
+                            <li id="addBurgerInput" class="list-group-item text-white bg-primary">
+                                <input name="addBurgerInput" placeholder="What type of burger?" class="form-control"
+                                    type="text" oninvalid="this.setCustomValidity('Enter a Burger!')"
                                     oninput="this.setCustomValidity('')" required>
                             </li>
-                            <li class="list-group-item text-white bg-primary">
-                                <button type="submit" class="btn btn-success btn-lg text-white">Add Burger!</button>
+                            <li id="burgerButton" class="list-group-item text-white bg-primary">
+                                <button id="burgerButton" type="button" class="btn btn-success btn-lg text-white">Add
+                                    Burger</button>
+                            </li>
+                            <li id="addCustomerName" class="list-group-item text-white bg-primary">
+                                <input name="addCustomerName" placeholder="Customer Name?" class="form-control"
+                                    type="text" oninvalid="this.setCustomValidity('Enter a customer name!')"
+                                    oninput="this.setCustomValidity('')" required>
+                            </li>
+                            <li id="orderButton" class="list-group-item text-white bg-primary">
+                                <button id="orderButton" type="submit" class="btn btn-success btn-lg text-white">Create
+                                    Order!</button>
                             </li>
                         </form>
                     </ul>
@@ -37,6 +47,7 @@
                     <li style="list-style-type:none">
                         <div id="updateBurger" class="text-white bg-info text-center">
                             <p>{{this.dataValues.id}}) {{this.dataValues.burger_name}}
+                                <br> For: {{this.customer.dataValues.customer_name}}
                                 <button id={{this.dataValues.id}}
                                     class="eatMe btn btn-lg btn-outline-warning text-white">Eat Me!</button>
                             </p>
@@ -55,7 +66,8 @@
                     {{#if this.dataValues.devoured}}
                     <li style="list-style-type:none">
                         <div class="bg-danger text-center">
-                            <p>{{this.dataValues.id}}) {{this.dataValues.burger_name}}</p>
+                            <p>{{this.dataValues.id}}) {{this.dataValues.burger_name}} <br>
+                                Eaten By: {{this.customer.dataValues.customer_name}} </p>
                         </div>
                     </li>
                     {{/if}}
@@ -65,9 +77,9 @@
             </div>
 
         </div>
-        <button id="clear" type="button" class="btn btn-danger btn-lg btn-block mt-5">Clear all Burgers!</button>
+        <button id="clearBurgers" type="button" class="btn btn-danger btn-lg btn-block mt-5">Clear all Burgers!</button>
 
+        <button id="clearCustomers" type="button" class="btn btn-danger btn-lg btn-block mt-3">Clear all
+            Customers!</button>
     </div>
-</div>
-</div>
 </div>

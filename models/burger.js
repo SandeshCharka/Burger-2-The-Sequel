@@ -5,8 +5,8 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                isNull: function(val) {
-                    if(!val) {
+                isNull: function (val) {
+                    if (!val) {
                         throw new Error("Burger Name can't be empty");
                     } else {
                         return true;
@@ -19,5 +19,14 @@ module.exports = function (sequelize, DataTypes) {
             defaultValue: 0
         },
     });
+
+    burger.associate = function (models) {
+        burger.belongsTo(models.customer, {
+            foreignKey: {
+                allowNull: false
+            }
+        })
+    };
+
     return burger;
 };

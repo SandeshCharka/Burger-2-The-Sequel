@@ -6,15 +6,15 @@ module.exports = function (app) {
 
 
         db.burger.findAll({
+            include: [ db.customer ],
             order: [
                 ['burger_name', 'ASC'],
             ]
         }).then(function (data) {
 
+            // console.log(data);
             // console.log(data[0].dataValues.burger_name);
             // console.log(JSON.stringify(data));
-
-            // console.log(data);
 
             var hbsObject = {
                 burgers: data
@@ -25,14 +25,19 @@ module.exports = function (app) {
         });
     });
 
+    app.post("/api/customers", function (req, res) {
+
+        db.customer.create(req.body).then(function (result) {
+            res.json({
+                id: result.dataValues.id
+            });
+        });
+    });
+
     app.post("/api/burgers", function (req, res) {
 
-        var newBurger = req.body.newBurger;
+        db.burger.create(req.body).then(function (result) {
 
-        db.burger.create({
-            burger_name: newBurger,
-        }).then(function (result) {
-            
             res.json({
                 id: result.dataValues.id
             })
@@ -64,6 +69,21 @@ module.exports = function (app) {
     app.delete("/api/burgers", function (req, res) {
 
         db.burger.destroy({
+            // This method will reset the Id values
+            // truncate: true,
+            where: {
+
+            },
+        }).then(function (result) {
+
+            res.status(200).end();
+
+        });
+    });
+
+    app.delete("/api/customers", function (req, res) {
+
+        db.customer.destroy({
             // This method will reset the Id values
             // truncate: true,
             where: {

@@ -1,19 +1,39 @@
 $(function () {
 
+    $("#orderButton").hide();
+    $("#addCustomerName").hide();
+
+    $("#burgerButton").on("click", function (event) {
+
+        $("#burgerButton").toggle();
+        $("#orderButton").toggle();
+        $("#addCustomerName").toggle();
+    });
+
     // Add Burger Form
     $("#addBurger").on("submit", function (event) {
         event.preventDefault();
 
-        var newBurger = {
-            newBurger: $("#addBurger [name=addBurgerInput]").val().trim()
-        };
+        var newBurger = $("#addBurger [name=addBurgerInput]").val().trim();
 
-        $.ajax("/api/burgers", {
+        var newCustomer = {
+            customer_name: $("#addBurger [name=addCustomerName]").val().trim()
+        }
+
+        $.ajax("/api/customers", {
             type: "POST",
-            data: newBurger,
-        }).then(function () {
-            
-            location.reload();
+            data: newCustomer,
+        }).then(function (data) {
+            var id = data.id
+            $.ajax("/api/burgers", {
+                type: "POST",
+                data: {
+                    burger_name: newBurger,
+                    customerId: id
+                }
+            }).then(function (data) {
+                location.reload();
+            });
         })
     });
     $(".eatMe").on("click", function (event) {
@@ -27,9 +47,18 @@ $(function () {
             location.reload();
         })
     });
-    $("#clear").on("click", function (event) {
+    $("#clearBurgers").on("click", function (event) {
         event.preventDefault();
         $.ajax("/api/burgers", {
+            type: "DELETE"
+        }).then(function () {
+            location.reload();
+        })
+    });
+
+    $("#clearCustomers").on("click", function (event) {
+        event.preventDefault();
+        $.ajax("/api/customers", {
             type: "DELETE"
         }).then(function () {
             location.reload();
