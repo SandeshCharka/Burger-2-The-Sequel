@@ -28,11 +28,18 @@ require("./routes/api-routes.js")(app);
 // Requiring our models for syncing
 var db = require("./models");
 
+var syncOptions = {
+    force: true
+};
 
-db.sequelize.sync({
-    force: true,
-    logging: console.log,
-}).then(function () {
+// If running a test, set syncOptions.force to true
+// clearing the `testdb`
+if (process.env.NODE_ENV === "test") {
+    syncOptions.force = true;
+}
+
+// logging: console.log
+db.sequelize.sync(syncOptions).then(function () {
     app.listen(PORT, function () {
         console.log("App listening on PORT " + PORT);
     });
