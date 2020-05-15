@@ -1,6 +1,6 @@
 # Burger-2-The-Sequel
 
-## [Live Website Link](https://burger-2-the-sequel-sandesh.herokuapp.com/?target=_blank)
+## <a href="https://burger-2-the-sequel-sandesh.herokuapp.com/" target="_blank">Live Website Link</a>
 
 
 ## Description
