@@ -2,7 +2,8 @@
 
 ## Live Link
 
-https://burger-2-the-sequel-sandesh.herokuapp.com/
+[Live Website Link](https://burger-2-the-sequel-sandesh.herokuapp.com/)
+
 
 ## Description
 
@@ -18,7 +19,7 @@ This application is a full-stack application utilizing HTML/CSS/Bootstrap/Handle
 
 ## Overview
 
-<img alt="Burger-2-The-Sequel-DemoPicture" src="public/assets/img/demoPic.jpg" width="" height="" target="_blank" />
+<img alt="Burger-2-The-Sequel-DemoPicture" src="public/assets/img/demoPic.jpg" width="" height="" />
 
 ## Local Setup
 
