@@ -18,7 +18,7 @@ This application is a full-stack application utilizing HTML/CSS/Bootstrap/Handle
 
 ## Overview
 
-<img alt="Burger-2-The-Sequel-DemoPicture" src="public/assets/img/demoPic.jpg" width="" height="" />
+<img alt="Burger-2-The-Sequel-DemoPicture" src="public/assets/img/demoPic.jpg" width="" height="" target="_blank" />
 
 ## Local Setup
 
