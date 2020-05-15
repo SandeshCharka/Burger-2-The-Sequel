@@ -2,7 +2,7 @@
 
 ## Live Link
 
-https://eat-da-burger-sandesh.herokuapp.com/
+https://burger-2-the-sequel-sandesh.herokuapp.com/
 
 ## Description
 
